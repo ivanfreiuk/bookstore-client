@@ -1,0 +1,22 @@
+.vertical-text {
+    -webkit-transform: rotate(180deg); 
+    transform: rotate(180deg);
+    -webkit-writing-mode: vertical-rl; 
+    writing-mode:tb-rl;
+}
+.brand-name {
+    font-size: 44px;
+}
+nav {
+    text-transform: uppercase;
+}
+
+.bg-dark {
+    background-color: rgba(0, 0, 0, 0.8)!important;
+}
+.navbar-fixed-top {
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
