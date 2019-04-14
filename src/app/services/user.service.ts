@@ -6,7 +6,7 @@ import { User } from '../models';
 @Injectable({ providedIn: 'root' })
 
 export class UserService {
-    private apiUrl = 'https://localhost:5001/api';
+    private apiUrl = 'https://localhost:44351/api'; // 'https://localhost:5001/api';
 
     constructor(private http: HttpClient) { }
 
@@ -19,7 +19,7 @@ export class UserService {
     }
 
     register(user: User) {
-        return this.http.post(`${this.apiUrl}/users/register`, user);
+        return this.http.post(`${this.apiUrl}/account/register`, user);
     }
 
     update(user: User) {
