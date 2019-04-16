@@ -37,7 +37,7 @@ export class MatLoginComponent implements OnInit {
 
     // stop here if form is invalid
     if (this.loginForm.invalid) {
-        return;
+      return;
     }
 
     this.loading = true;
@@ -51,6 +51,6 @@ export class MatLoginComponent implements OnInit {
           this.error = error;
           this.loading = false;
         });
-}
+  }
 
 }
