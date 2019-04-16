@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent, HomeComponent } from '../components';
+import { HomeComponent } from '../components';
 import { AuthGuard } from '../guards';
 import { RegisterComponent } from '../components/register/register.component';
+import { MatLoginComponent } from '../components/mat-login/mat-login.component';
 
 const routes: Routes = [
   {
@@ -16,7 +17,7 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    component: LoginComponent
+    component: MatLoginComponent
   },
   {
     path: 'register',

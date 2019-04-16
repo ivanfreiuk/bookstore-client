@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { AuthenticationService } from 'src/app/services';
+import { first } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-mat-login',
@@ -12,9 +15,12 @@ export class MatLoginComponent implements OnInit {
   loading = false;
   submitted = false;
   returnUrl: string;
+  error: any;
 
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder,
+    private authenticationService: AuthenticationService,
+    private router: Router) { }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
@@ -28,11 +34,23 @@ export class MatLoginComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
+
     // stop here if form is invalid
     if (this.loginForm.invalid) {
-      return;
+        return;
     }
 
-  }
+    this.loading = true;
+    this.authenticationService.login(this.controls.emailControl.value, this.controls.passwordControl.value)
+      .pipe(first())
+      .subscribe(
+        data => {
+          this.router.navigate([this.returnUrl]);
+        },
+        error => {
+          this.error = error;
+          this.loading = false;
+        });
+}
 
 }

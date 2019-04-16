@@ -62,14 +62,7 @@ import {
     imports: [
         AppRoutingModule,
         CommonModule,
-        ReactiveFormsModule
-    ],
-    exports: [
-        NavbarComponent,
-        LoginComponent,
-        HeaderComponent,
-        FooterComponent,
-        RegisterComponent,
+        ReactiveFormsModule,
         MatAutocompleteModule,
         MatBadgeModule,
         MatBottomSheetModule,
@@ -105,6 +98,14 @@ import {
         MatToolbarModule,
         MatTooltipModule,
         MatTreeModule
+    ],
+    exports: [
+        NavbarComponent,
+        LoginComponent,
+        HeaderComponent,
+        FooterComponent,
+        RegisterComponent,   
+        MatLoginComponent     
     ]
 })
 export class ComponentsModule { }
