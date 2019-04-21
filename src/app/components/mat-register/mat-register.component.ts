@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { first } from 'rxjs/operators';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { AuthenticationService } from 'src/app/services';
+import { UserService } from 'src/app/services';
 import { Router } from '@angular/router';
+import { User } from 'src/app/models';
 
 @Component({
   selector: 'app-mat-register',
@@ -19,11 +20,13 @@ export class MatRegisterComponent implements OnInit {
 
 
   constructor(private formBuilder: FormBuilder,
-    private authenticationService: AuthenticationService,
+    private userService: UserService,
     private router: Router) { }
 
   ngOnInit() {
-    this.registerForm = this.formBuilder.group({
+    this.registerForm = this.formBuilder.group({      
+      firstNameControl: ['', [Validators.required]],
+      lastNameControl: ['', [Validators.required]],
       emailControl: ['', [Validators.required, Validators.email]],
       passwordControl: ['', Validators.required]
     });
@@ -41,11 +44,19 @@ export class MatRegisterComponent implements OnInit {
     }
 
     this.loading = true;
-    this.authenticationService.login(this.controls.emailControl.value, this.controls.passwordControl.value)
+    const user: User = {
+      id: 1,
+      firstName : this.controls.firstNameControl.value,
+      lastName : this.controls.lastNameControl.value,
+      email : this.controls.emailControl.value,
+      password : this.controls.passwordControl.value,
+      role: ''
+    };
+    this.userService.register(user)
       .pipe(first())
       .subscribe(
         data => {
-          this.router.navigate([this.returnUrl]);
+           this.router.navigate(['/home']);
         },
         error => {
           this.error = error;

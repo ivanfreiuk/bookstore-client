@@ -104,8 +104,9 @@ import {
         LoginComponent,
         HeaderComponent,
         FooterComponent,
-        RegisterComponent,   
-        MatLoginComponent     
+        RegisterComponent,
+        MatLoginComponent,
+        MatRegisterComponent
     ]
 })
 export class ComponentsModule { }

@@ -5,10 +5,11 @@
 .content {
     background: rgba(0, 0, 0, 1);
     width: 100%;
-    min-height: 100px;
+    height: 100px;
     padding-top: 20px;
 }
 
 footer {
     color: white;
+    position: static;
 }

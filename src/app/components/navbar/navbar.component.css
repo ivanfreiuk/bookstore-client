@@ -12,10 +12,11 @@ nav {
 }
 
 .bg-dark {
-    background-color: rgba(0, 0, 0, 0.8)!important;
+    /*background-color: rgba(0, 0, 0, 0.8)!important;*/
+    background: rgba(0, 0, 0, 1)!important;
 }
 .navbar-fixed-top {
-    position: fixed;
+    position: static;
     right: 0;
     left: 0;
     z-index: 1030;

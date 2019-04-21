@@ -4,6 +4,7 @@ import { HomeComponent } from '../components';
 import { AuthGuard } from '../guards';
 import { RegisterComponent } from '../components/register/register.component';
 import { MatLoginComponent } from '../components/mat-login/mat-login.component';
+import { MatRegisterComponent } from '../components/mat-register/mat-register.component';
 
 const routes: Routes = [
   {
@@ -13,7 +14,8 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,    
+    canActivate: [AuthGuard]
   },
   {
     path: 'login',
@@ -21,7 +23,7 @@ const routes: Routes = [
   },
   {
     path: 'register',
-    component: RegisterComponent
+    component: MatRegisterComponent
   },
   // otherwise redirect to home
   { path: '**', redirectTo: '/home', pathMatch: 'full' }
