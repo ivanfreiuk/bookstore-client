@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MatRegisterComponent } from './mat-register.component';
+import { MainContentComponent } from './main-content.component';
 
-describe('MatRegisterComponent', () => {
-  let component: MatRegisterComponent;
-  let fixture: ComponentFixture<MatRegisterComponent>;
+describe('MainContentComponent', () => {
+  let component: MainContentComponent;
+  let fixture: ComponentFixture<MainContentComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MatRegisterComponent ]
+      declarations: [ MainContentComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MatRegisterComponent);
+    fixture = TestBed.createComponent(MainContentComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

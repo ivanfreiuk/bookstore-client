@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from '../app-routing/app-routing.module';
 import { LoginComponent } from './login/login.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -46,7 +46,11 @@ import {
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
-  } from '@angular/material';
+} from '@angular/material';
+import { BookDetailComponent } from './book-detail/book-detail.component';
+import { BsNavbarComponent } from './bs-navbar/bs-navbar.component';
+import { StorebarComponent } from './storebar/storebar.component';
+import { MainContentComponent } from './main-content/main-content.component';
 
 @NgModule({
     declarations: [
@@ -57,7 +61,11 @@ import {
         FooterComponent,
         RegisterComponent,
         MatRegisterComponent,
-        MatLoginComponent
+        MatLoginComponent,
+        BookDetailComponent,
+        BsNavbarComponent,
+        StorebarComponent,
+        MainContentComponent
     ],
     imports: [
         AppRoutingModule,
@@ -97,16 +105,20 @@ import {
         MatTabsModule,
         MatToolbarModule,
         MatTooltipModule,
-        MatTreeModule
+        MatTreeModule,
+        FormsModule
     ],
     exports: [
         NavbarComponent,
         LoginComponent,
         HeaderComponent,
         FooterComponent,
-        RegisterComponent,
         MatLoginComponent,
-        MatRegisterComponent
+        MatRegisterComponent,
+        BsNavbarComponent,
+        BookDetailComponent,
+        StorebarComponent,
+        MainContentComponent
     ]
 })
 export class ComponentsModule { }

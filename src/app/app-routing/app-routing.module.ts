@@ -5,6 +5,7 @@ import { AuthGuard } from '../guards';
 import { RegisterComponent } from '../components/register/register.component';
 import { MatLoginComponent } from '../components/mat-login/mat-login.component';
 import { MatRegisterComponent } from '../components/mat-register/mat-register.component';
+import { BookDetailComponent } from '../components/book-detail/book-detail.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent,    
     canActivate: [AuthGuard]
+  },
+  {
+    path: 'book-detail',
+    component: BookDetailComponent
   },
   {
     path: 'login',

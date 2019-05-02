@@ -10,7 +10,6 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { JwtInterceptor } from './helpers/jwt.interceptor';
 import { ComponentsModule } from './components/components.module';
 import { ReactiveFormsModule } from '@angular/forms';
-
 @NgModule({
   declarations: [
     AppComponent

@@ -1,0 +1,16 @@
+.storebar-wrapper {
+    padding: 5px;
+}
+.storebar-tools,
+.search-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+mat-form-field {    
+    width: 100%;
+    min-width: 100px;
+    max-width: 350px;
+}
