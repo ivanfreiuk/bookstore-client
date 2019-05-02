@@ -48,7 +48,6 @@ import {
     MatTreeModule,
 } from '@angular/material';
 import { BookDetailComponent } from './book-detail/book-detail.component';
-import { BsNavbarComponent } from './bs-navbar/bs-navbar.component';
 import { StorebarComponent } from './storebar/storebar.component';
 import { MainContentComponent } from './main-content/main-content.component';
 
@@ -63,7 +62,6 @@ import { MainContentComponent } from './main-content/main-content.component';
         MatRegisterComponent,
         MatLoginComponent,
         BookDetailComponent,
-        BsNavbarComponent,
         StorebarComponent,
         MainContentComponent
     ],
@@ -115,7 +113,6 @@ import { MainContentComponent } from './main-content/main-content.component';
         FooterComponent,
         MatLoginComponent,
         MatRegisterComponent,
-        BsNavbarComponent,
         BookDetailComponent,
         StorebarComponent,
         MainContentComponent

@@ -1,11 +1,8 @@
+.relative {
+    position: relative;
+}
+
 .page-title{
 
 }
 
-mat-grid-tile {
-    background: red;
-}
-
-.card-offer{
-    background: #f7f7f9;
-}

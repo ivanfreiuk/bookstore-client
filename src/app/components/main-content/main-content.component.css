@@ -1,8 +1,7 @@
 .storebar-wrapper {
     padding: 5px;
 }
-.storebar-tools,
-.search-group {
+.storebar-tools {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -13,4 +12,14 @@ mat-form-field {
     width: 100%;
     min-width: 100px;
     max-width: 350px;
+}
+
+.float-left {
+    float: left;
+}
+.float-right {
+    float: right;
+}
+.clearfix {
+    clear: both;
 }
