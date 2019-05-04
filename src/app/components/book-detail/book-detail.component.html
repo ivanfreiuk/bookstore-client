@@ -1,26 +1,63 @@
-<div class="container">
-  <div class="row">
-    <div class="col-6">
-      <div class="relative">
-        <div class="image-container">
-          <img src="../../../assets/images/uberman-the-novel.jpg" alt="book-img">
+<div class="bootstrap-wrapper">
+  <div class="details-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="relative image-container">
+            <div class="absolute-center">
+              <img src="../../../assets/images/uberman-the-novel.jpg" alt="book-img">
+            </div>
+          </div>
+
+        </div>
+        <div class="col-md-6">
+          <div class="page-title">
+            <h1><strong>Book Title</strong></h1>
+          </div>
+          <mat-card class="card-offer">
+            <mat-card-content>
+              <div class="book-price">
+                <h3>Price: 100$</h3>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="bk-action-qty">
+                    <app-counter></app-counter>
+                  </div>
+                </div>
+                <div class="col-md-9 bk-add-to-card">
+                  <button mat-raised-button color="primary">
+                    <mat-icon>add_shopping_cart</mat-icon> Add to cart
+                  </button>
+                </div>
+              </div>
+              <div class="row separator">
+                <mat-divider inset="true"></mat-divider>
+              </div>
+              <div class="row adtn-actions">
+                <div class="col-md-6">
+                  <button mat-button>
+                    <mat-icon>favorite</mat-icon> Add to list
+                  </button>
+                </div>
+
+                <div class="col-md-6">
+                  <button mat-button>
+                    <mat-icon>email</mat-icon> Questions?
+                  </button>
+                </div>
+              </div>
+              <div class="row separator">
+                <mat-divider inset="true"></mat-divider>
+              </div>
+              <div class="row">
+                
+              </div>
+
+            </mat-card-content>
+          </mat-card>
         </div>
       </div>
-
-    </div>
-    <div class="col-6">
-      <div class="page-title">
-        <h1>Book Title</h1>
-      </div>
-      <mat-card class="card-offer">
-        <mat-card-content>
-          <p>
-            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-            bred for hunting.
-          </p>
-        </mat-card-content>
-      </mat-card>
     </div>
   </div>
 </div>

@@ -2,12 +2,10 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from '../app-routing/app-routing.module';
-import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { RegisterComponent } from './register/register.component';
 import { MatRegisterComponent } from './mat-register/mat-register.component';
 import { MatLoginComponent } from './mat-login/mat-login.component';
 import {
@@ -47,23 +45,19 @@ import {
     MatTooltipModule,
     MatTreeModule,
 } from '@angular/material';
-import { BookDetailComponent } from './book-detail/book-detail.component';
-import { StorebarComponent } from './storebar/storebar.component';
-import { MainContentComponent } from './main-content/main-content.component';
+import { BookDetailComponent, MainContentComponent, CounterComponent } from '.';
 
 @NgModule({
     declarations: [
         NavbarComponent,
-        LoginComponent,
         HomeComponent,
         HeaderComponent,
         FooterComponent,
-        RegisterComponent,
         MatRegisterComponent,
         MatLoginComponent,
         BookDetailComponent,
-        StorebarComponent,
-        MainContentComponent
+        MainContentComponent,
+        CounterComponent
     ],
     imports: [
         AppRoutingModule,
@@ -108,14 +102,13 @@ import { MainContentComponent } from './main-content/main-content.component';
     ],
     exports: [
         NavbarComponent,
-        LoginComponent,
         HeaderComponent,
         FooterComponent,
         MatLoginComponent,
         MatRegisterComponent,
         BookDetailComponent,
-        StorebarComponent,
-        MainContentComponent
+        MainContentComponent,
+        CounterComponent
     ]
 })
 export class ComponentsModule { }

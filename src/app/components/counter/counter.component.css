@@ -1,0 +1,14 @@
+.content-size {
+    height: 60px;
+    width: 124px;
+    padding: 0px 2px;
+}
+mat-form-field {
+    width: 40px;
+}
+input {
+    text-align: center;
+}
+.bg-light {
+    background: #f5f5f5;
+}
