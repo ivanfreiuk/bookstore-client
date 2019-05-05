@@ -1,13 +1,13 @@
 <div class="bootstrap-wrapper">
   <mat-card class="content-size bg-light">
-      <button mat-icon-button>
-        <mat-icon>remove</mat-icon>
-      </button>
-      <mat-form-field>
-        <input matInput>
-      </mat-form-field>
-      <button mat-icon-button>
-        <mat-icon>add</mat-icon>
-      </button>
+    <button (click)="decrease()" mat-icon-button>
+      <mat-icon>remove</mat-icon>
+    </button>
+    <mat-form-field>
+      <input matInput [(ngModel)]="currentValue">
+    </mat-form-field>
+    <button (click)="increase()" mat-icon-button>
+      <mat-icon>add</mat-icon>
+    </button>
   </mat-card>
 </div>

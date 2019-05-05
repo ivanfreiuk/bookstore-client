@@ -46,7 +46,10 @@ import {
     MatTreeModule,
 } from '@angular/material';
 import { BookDetailComponent, MainContentComponent, CounterComponent } from '.';
-
+import { BookListComponent } from './book-list/book-list.component';
+import { BookItemListComponent } from './book-item-list/book-item-list.component';
+import { BooksMainPageComponent } from './books-main-page/books-main-page.component';
+import { CategoryCardComponent } from './category-card/category-card.component';
 @NgModule({
     declarations: [
         NavbarComponent,
@@ -57,7 +60,11 @@ import { BookDetailComponent, MainContentComponent, CounterComponent } from '.';
         MatLoginComponent,
         BookDetailComponent,
         MainContentComponent,
-        CounterComponent
+        CounterComponent,
+        BookListComponent,
+        BookItemListComponent,
+        BooksMainPageComponent,
+        CategoryCardComponent
     ],
     imports: [
         AppRoutingModule,

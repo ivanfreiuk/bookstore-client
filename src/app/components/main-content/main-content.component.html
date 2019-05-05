@@ -37,7 +37,7 @@
                 <span>Shopping Card</span>
               </button>
             </div>
-            <div class="tool-item">
+            <div *ngIf="!authSvc.currentUserValue" class="tool-item">
               <button mat-button>
                 <mat-icon>person_outline</mat-icon>
                 <span>
@@ -45,6 +45,14 @@
                 </span>
               </button>
             </div>
+            <div *ngIf="authSvc.currentUserValue" class="tool-item">
+                <button (click)="logout()" mat-button>
+                  <mat-icon>input</mat-icon>
+                  <span>
+                    LOG OUT
+                  </span>
+                </button>
+              </div>
           </div>
         </div>
       </div>
