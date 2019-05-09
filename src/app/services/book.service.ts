@@ -31,4 +31,9 @@ export class BookService {
   delete(id: number) {
     return this.http.delete(`${this.apiUrl}/books/` + id);
   }
+
+  getBooksByCategoryId(id: number): Observable<Book[]> {
+    this.http.post("", {}, {responseType: 'text'})
+    return this.http.get<Book[]>(`${this.apiUrl}/books/category/` + id);
+  }
 }

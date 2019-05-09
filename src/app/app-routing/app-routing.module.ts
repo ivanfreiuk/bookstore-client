@@ -7,6 +7,7 @@ import { MatRegisterComponent } from '../components/mat-register/mat-register.co
 import { BookDetailComponent } from '../components/book-detail/book-detail.component';
 import { BookListComponent } from '../components/book-list/book-list.component';
 import { BooksMainPageComponent } from '../components/books-main-page/books-main-page.component';
+import { AddCommentComponent } from '../components/add-comment/add-comment.component';
 
 const routes: Routes = [
   {

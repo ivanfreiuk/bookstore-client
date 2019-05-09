@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { BookService } from 'src/app/services/book.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Book } from 'src/app/models/book';
+import { Comment } from 'src/app/models/comment';
+import { CommentService } from 'src/app/services/comment.service';
 
 @Component({
   selector: 'app-book-detail',
@@ -11,9 +13,15 @@ import { Book } from 'src/app/models/book';
 export class BookDetailComponent implements OnInit {
   currentBook: Book;
   bookId: number;
-  constructor(private bookSvc: BookService, private router: Router, private route: ActivatedRoute) {
+  bookComments: Comment[];
+
+  constructor(private bookSvc: BookService, private commentSvc: CommentService, private router: Router, private route: ActivatedRoute) {
     this.route.params.subscribe(params => {
       this.bookId = params['id'];
+    });
+
+    this.commentSvc.getCommentsByBookId(this.bookId).subscribe(data => {
+      this.bookComments = data;
     });
   }
 
@@ -24,9 +32,15 @@ export class BookDetailComponent implements OnInit {
       },
       error => {
         if (error.status == 401) {
-            // TODO
+          // TODO
         }
-      })
+      });
   }
 
+
+  onCommentsChanged() {
+    this.commentSvc.getCommentsByBookId(this.bookId).subscribe(data => {
+      this.bookComments = data;
+    });
+  }
 }

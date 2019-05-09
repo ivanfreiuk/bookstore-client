@@ -3,14 +3,14 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatIconModule} from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { JwtInterceptor } from './helpers/jwt.interceptor';
 import { ComponentsModule } from './components/components.module';
 import { ReactiveFormsModule } from '@angular/forms';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [

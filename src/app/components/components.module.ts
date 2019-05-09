@@ -50,6 +50,10 @@ import { BookListComponent } from './book-list/book-list.component';
 import { BookItemListComponent } from './book-item-list/book-item-list.component';
 import { BooksMainPageComponent } from './books-main-page/books-main-page.component';
 import { CategoryCardComponent } from './category-card/category-card.component';
+import { CommentListComponent } from './comment-list/comment-list.component';
+import { RatingModule } from 'ng-starrating';
+import { AddCommentComponent } from './add-comment/add-comment.component';
+
 @NgModule({
     declarations: [
         NavbarComponent,
@@ -64,7 +68,9 @@ import { CategoryCardComponent } from './category-card/category-card.component';
         BookListComponent,
         BookItemListComponent,
         BooksMainPageComponent,
-        CategoryCardComponent
+        CategoryCardComponent,
+        CommentListComponent,
+        AddCommentComponent
     ],
     imports: [
         AppRoutingModule,
@@ -105,7 +111,8 @@ import { CategoryCardComponent } from './category-card/category-card.component';
         MatToolbarModule,
         MatTooltipModule,
         MatTreeModule,
-        FormsModule
+        FormsModule,
+        RatingModule 
     ],
     exports: [
         NavbarComponent,

@@ -1,0 +1,50 @@
+<div class="bootstrap-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Comment for book </h1>
+      </div>
+    </div>
+    <mat-card>
+      <form [formGroup]="commentForm">
+        <div class="row">
+          <div class="col-md-3">
+            <p>Your rating?</p>
+          </div>
+          <div class="col-md-9">
+            <star-rating [value]="0" checkedcolor="#f70" uncheckedcolor="#ddd" size="30px" readonly="false"
+              (rate)="onRate($event.newValue)">
+            </star-rating>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <p>Headline for your review *</p>
+          </div>
+          <div class="col-md-9">
+            <mat-form-field appearance="outline">
+              <input matInput placeholder="Headline *" formControlName="headlineControl">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <p>Your opinion on the book *</p>
+          </div>
+          <div class="col-md-9">
+            <mat-form-field appearance="outline">
+              <textarea matInput placeholder="Your opinion goes here *" formControlName="contentControl"></textarea>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="btn-submit offset-md-3 col-md-9">
+            <button (click)="commentSubmit()" mat-raised-button color="primary">
+              <mat-icon>rate_review</mat-icon> Submit comment
+            </button>
+          </div>
+        </div>
+      </form>
+    </mat-card>
+  </div>
+</div>

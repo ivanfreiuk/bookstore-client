@@ -38,7 +38,7 @@
               </button>
             </div>
             <div *ngIf="!authSvc.currentUserValue" class="tool-item">
-              <button mat-button>
+              <button (click)="login()" mat-button>
                 <mat-icon>person_outline</mat-icon>
                 <span>
                   LOG IN
