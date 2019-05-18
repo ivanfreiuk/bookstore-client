@@ -46,13 +46,23 @@ import {
     MatTreeModule,
 } from '@angular/material';
 import { BookDetailComponent, MainContentComponent, CounterComponent } from '.';
-import { BookListComponent } from './book-list/book-list.component';
-import { BookItemListComponent } from './book-item-list/book-item-list.component';
+import { BookListComponent } from './books-main-page/book-list/book-list.component';
+import { BookItemListComponent } from './books-main-page/book-list/book-item-list/book-item-list.component'
 import { BooksMainPageComponent } from './books-main-page/books-main-page.component';
-import { CategoryCardComponent } from './category-card/category-card.component';
+import { CategoryCardComponent } from './books-main-page/category-card/category-card.component';
 import { CommentListComponent } from './comment-list/comment-list.component';
 import { RatingModule } from 'ng-starrating';
 import { AddCommentComponent } from './add-comment/add-comment.component';
+import { AddBookComponent } from './admin/add-book/add-book.component';
+import { ChipsAutocompleteComponent } from './admin/add-book/chips-autocomplete/chips-autocomplete.component';
+import { CategoryChipsAutocompleteComponent } from './admin/add-book/category-chips-autocomplete/category-chips-autocomplete.component';
+import { AuthorChipsAutocompleteComponent } from './admin/add-book/author-chips-autocomplete/author-chips-autocomplete.component';
+import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
+import { AdminBookListComponent } from './admin/admin-book-list/admin-book-list.component';
+import { EditBookComponent } from './admin/edit-book/edit-book.component';
+import { SidebarComponent } from './main-content/sidebar/sidebar.component';
+import { WishListTabComponent } from './main-content/sidebar/wish-list-tab/wish-list-tab.component';
+import { CartItemTabComponent } from './main-content/sidebar/cart-item-tab/cart-item-tab.component';
 
 @NgModule({
     declarations: [
@@ -70,7 +80,17 @@ import { AddCommentComponent } from './add-comment/add-comment.component';
         BooksMainPageComponent,
         CategoryCardComponent,
         CommentListComponent,
-        AddCommentComponent
+        AddCommentComponent,
+        AddBookComponent,
+        ChipsAutocompleteComponent,
+        CategoryChipsAutocompleteComponent,
+        AuthorChipsAutocompleteComponent,
+        AdminPanelComponent,
+        AdminBookListComponent,
+        EditBookComponent,
+        SidebarComponent,
+        WishListTabComponent,
+        CartItemTabComponent
     ],
     imports: [
         AppRoutingModule,

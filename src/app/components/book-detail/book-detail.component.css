@@ -11,10 +11,7 @@
 .details-content {
     margin: 10px 10px;
 }
-.image-container {
-    width: 100%;
-    height: 600px;
-}
+
 .rating {
     margin: 10px;
 }
@@ -52,3 +49,9 @@
 .review-action button {
     height: 50px;
 }
+
+img {
+    width: 100%;
+    height: 600px;
+    object-fit: contain;
+} 

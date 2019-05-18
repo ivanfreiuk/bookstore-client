@@ -22,7 +22,7 @@
           </div>
           <div class="page-size float-right">
             <mat-form-field appearance="outline">
-              <mat-select (selectionChange)="changeSortOption($event.value)">
+              <mat-select (selectionChange)="changeSizePage($event.value)">
                 <mat-option value="12">12</mat-option>
                 <mat-option value="24">24</mat-option>
                 <mat-option value="36">36</mat-option>
@@ -38,7 +38,12 @@
             <mat-divider [inset]="false"></mat-divider>
           </div>
         </div>
-        <app-book-list [listBooks]="books"></app-book-list>
+        <div *ngIf="books&&authSvc.currentUserValue?.roleName!=='User'">
+            <app-admin-book-list [(listBooks)]="books" [pageSize]="bookPerPage"></app-admin-book-list>
+        </div>
+        <div *ngIf="books&&authSvc.currentUserValue?.roleName==='User'" >
+          <app-book-list [listBooks]="books"></app-book-list>
+        </div>
       </div>
     </div>
   </div>

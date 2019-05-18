@@ -3,16 +3,17 @@ import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Book } from '../models/book';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BookService {
-  private apiUrl = environment.apiUrl;
+  private apiUrl = `${environment.apiUrl}/api`;
 
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<Book[]>{
+  getAll(): Observable<Book[]> {
     return this.http.get<Book[]>(`${this.apiUrl}/books`);
   }
 
@@ -20,8 +21,16 @@ export class BookService {
     return this.http.get<Book>(`${this.apiUrl}/books/` + id);
   }
 
-  post(book: Book) {
-    return this.http.post(`${this.apiUrl}/books`, book);
+  searchByTitle(title: string) {
+    return this.http.get<Book[]>(`${this.apiUrl}/books/search/${title}`);
+  }
+
+  post(book: Book, imageFile: File): Observable<any> {
+    const formData = new FormData();
+    formData.append('file', imageFile, imageFile.name);
+    formData.append('jsonBook', JSON.stringify(book));
+
+    return this.http.post(`${this.apiUrl}/books`, formData);
   }
 
   update(book: Book) {
@@ -33,7 +42,6 @@ export class BookService {
   }
 
   getBooksByCategoryId(id: number): Observable<Book[]> {
-    this.http.post("", {}, {responseType: 'text'})
     return this.http.get<Book[]>(`${this.apiUrl}/books/category/` + id);
   }
 }

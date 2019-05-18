@@ -10,7 +10,7 @@ import { Comment } from '../models/comment';
 
 export class CommentService {
 
-  private apiUrl = environment.apiUrl;
+  private apiUrl = `${environment.apiUrl}/api`;
 
   constructor(private http: HttpClient) { }
 

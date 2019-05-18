@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CategoryService {
-  private apiUrl = environment.apiUrl;
+  private apiUrl = `${environment.apiUrl}/api`;
 
   constructor(private http: HttpClient) { }
 
@@ -20,8 +20,8 @@ export class CategoryService {
     return this.http.get<Category>(`${this.apiUrl}/categories/` + id);
   }
 
-  post(category: Category) {
-    return this.http.post(`${this.apiUrl}/categories`, category);
+  post(category: Category): Observable<Category> {
+    return this.http.post<Category>(`${this.apiUrl}/categories`, category);
   }
 
   update(category: Category) {

@@ -3,9 +3,18 @@
     max-height: 100%;
     margin: 10px;
 }
-.book-picture-block {
-    padding: 4px 10px;
+
+.picture-block {
+    padding: 1%;
 }
+
+img {
+    widows: 100%;
+    height: 350px;
+    object-fit: contain;
+} 
+
+
 .book-name {
     margin: 5px;
 }

@@ -3,7 +3,7 @@ export class Comment {
     bookId: number; 
     userId: number;
     headline: string;
-    publicationDate: string;
+    publicationDate: Date;
     mark: number;
     content: string;
     userName: string;

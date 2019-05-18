@@ -1,0 +1,23 @@
+mat-form-field {
+    width: 100%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+mat-card {
+   margin: 2% auto;
+}
+
+textarea {
+    height: 80px;
+}
+
+button, 
+.btn-submit {
+    height: 40px;
+    min-width: 160px;
+    width: 100%;
+    margin: 5px auto;
+}

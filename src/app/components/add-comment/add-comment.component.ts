@@ -41,7 +41,8 @@ export class AddCommentComponent implements OnInit {
     const comment = new Comment();
     comment.headline = this.commentForm.controls.headlineControl.value;
     comment.content = this.commentForm.controls.contentControl.value;
-    // TODO: comment.publicationDate = this.getDateTimeNow();
+    comment.publicationDate = new Date(Date.now());
+    console.log(comment.publicationDate);
     comment.mark = this.rating;
     comment.bookId = this.bookId;
     comment.userId = this.authSvc.currentUserValue ? this.authSvc.currentUserValue.id : 2;

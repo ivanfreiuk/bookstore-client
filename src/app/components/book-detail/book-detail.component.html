@@ -2,13 +2,8 @@
   <div class="details-content">
     <div class="container">
       <div class="row">
-        <div class="col-md-6">
-          <div class="relative image-container">
-            <div class="absolute-center">
-              <img src="{{currentBook?.imageUrl}}" [alt]="currentBook?.title">
-            </div>
-          </div>
-
+        <div class="col-md-6">          
+              <img src="{{currentBook?.imageUrl}}" [alt]="currentBook?.title">           
         </div>
         <div class="col-md-6">
           <div class="page-title">
@@ -26,11 +21,11 @@
               <div class="row">
                 <div class="col-md-3">
                   <div class="bk-action-qty">
-                    <app-counter></app-counter>
+                    <app-counter (counterValue)="onQuantityChanged($event)"></app-counter>
                   </div>
                 </div>
                 <div class="col-md-9 bk-add-to-card">
-                  <button mat-raised-button color="primary">
+                  <button mat-raised-button color="primary" (click)="addToCart(currentBook?.id)">
                     <mat-icon>add_shopping_cart</mat-icon> Add to cart
                   </button>
                 </div>
@@ -115,7 +110,7 @@
             </mat-tab>
             <mat-tab class="tab-content">
               <ng-template mat-tab-label>
-                <strong class="tab-title">Reviews</strong>
+                <strong class="tab-title" [matBadge]="bookComments?.length" matBadgeColor="accent" matBadgeOverlap="false">Reviews</strong>
               </ng-template>
               <div class="review-action">
                 <app-add-comment [bookId]="currentBook?.id" (commentAdded)="onCommentsChanged($event)"></app-add-comment>

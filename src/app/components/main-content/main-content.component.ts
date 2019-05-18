@@ -23,4 +23,8 @@ export class MainContentComponent implements OnInit {
   login() {
     this.router.navigate(['/login']);
   }
+
+  search(value: string) {
+    this.router.navigate(['/books'], { queryParams: { title: value } })
+  }
 }

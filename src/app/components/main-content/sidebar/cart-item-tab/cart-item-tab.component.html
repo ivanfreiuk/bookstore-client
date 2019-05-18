@@ -1,0 +1,32 @@
+<div class="bootstrap-wrapper">
+  <div *ngFor="let item of cartSvc.cartItemsValue">
+    <div class="cart-item-content">
+      <div class="clearfix">
+        <div class="float-left">
+          <img [src]="item.book.imageUrl" [alt]="item.book.title">
+        </div>
+        <div class="float-left">
+            <p>Title : {{item.book.title}}</p>
+            <p>Price : {{item.price}}</p>
+          </div>
+        <div class="float-right">
+          <div class="row">
+            <app-counter [value]="item.quantity"></app-counter>
+          </div>
+        </div>
+      </div>
+      <div class="clearfix">
+        <div class="float-right">
+          <button mat-raised-button color="warn">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </div>
+
+    </div>
+    <mat-divider></mat-divider>
+  </div>
+</div>
+<mat-toolbar color="primary" style="position: fixed; bottom: 0;">
+  <button mat-stroked-button>View cart</button>
+</mat-toolbar>

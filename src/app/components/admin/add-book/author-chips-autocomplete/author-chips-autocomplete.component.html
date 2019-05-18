@@ -1,0 +1,28 @@
+<mat-form-field appearance="outline" class="chip-list">
+    <mat-label>Enter book author </mat-label>  
+  <mat-chip-list #chipList>
+      <mat-chip
+        *ngFor="let author of selectedAuthors"
+        [selectable]="selectable"
+        [removable]="removable"
+        (removed)="remove(author)">
+        {{author.authorName}}
+        <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+      </mat-chip>
+      <input
+        placeholder="Book author *"
+        #itemInput
+        [formControl]="authorCtrl"
+        [matAutocomplete]="auto"
+        [matChipInputFor]="chipList"
+        [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+        [matChipInputAddOnBlur]="addOnBlur"
+        (matChipInputTokenEnd)="add($event)">
+    </mat-chip-list>
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+      <mat-option *ngFor="let author of filteredAuthors | async" [value]="author?.id">
+        {{author?.authorName}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+  

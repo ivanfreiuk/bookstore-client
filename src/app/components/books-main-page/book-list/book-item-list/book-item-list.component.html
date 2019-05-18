@@ -6,8 +6,8 @@
           <span *ngFor="let category of book.categories">{{category.categoryName}}  </span>
       </mat-card-subtitle>
     </mat-card-header>
-    <div class="book-picture-block">
-      <img mat-card-image [src]="book.imageUrl" [alt]="book.title">
+    <div class="picture-block">
+      <img mat-card-image [src]="book.imageUrl" [alt]="book.title">    
     </div>
     <mat-divider></mat-divider>
     <mat-card-content>
@@ -25,17 +25,17 @@
     <mat-card-actions>
       <div class="container">
         <div class="row">
-          <div class="col-md-4">
-            <button mat-raised-button color="primary">
+          <div class="col-4">
+            <button mat-raised-button color="primary" (click)="addToCart(book.id)">
               <mat-icon>add_shopping_cart</mat-icon>
             </button>
           </div>
-          <div class="col-md-4">
+          <div class="col-4">
             <button mat-button>
               <mat-icon>favorite_border</mat-icon>
             </button>
           </div>
-          <div class="col-md-4">
+          <div class="col-4">
             <button (click)="showDetail(book.id)"mat-button>
               <mat-icon>crop_free</mat-icon>
             </button>

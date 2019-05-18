@@ -8,12 +8,12 @@
         <div class="nav-item">
           <a mat-button routerLink="/books">Books</a>
         </div>
-        <div class="nav-item">
+        <div *ngIf="authSvc.currentUserValue?.roleName==='User'" class="nav-item">
           <button mat-button>Contact us</button>
-        </div>
-        <div class="nav-item">
-          <button mat-button>Basic</button>
-        </div>
+        </div>        
+        <div *ngIf="authSvc.currentUserValue?.roleName!=='User'" class="nav-item">
+            <button mat-button routerLink="/add-book">Add book</button>
+          </div>
         <div class="nav-item">
           <button mat-button>About us</button>
         </div>

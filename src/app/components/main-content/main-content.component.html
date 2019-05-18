@@ -1,8 +1,6 @@
 <mat-drawer-container class="example-container" hasBackdrop="true">
-  <mat-drawer #drawer mode="push" position="end">
-    <div style="width: 400px; margin: 10px;">
-      <h1>/**/*/*/*-/*-/0*/*0-/0/-0*-/0*-/0*/x` SETES ETST SET</h1>
-    </div>
+  <mat-drawer style="width: 450px; height: 100%; padding: 0;" #drawer mode="push" position="end">
+    <app-sidebar></app-sidebar>
   </mat-drawer>
   <mat-drawer-content>
     <div class="bootstrap-wrapper">
@@ -12,29 +10,35 @@
             <h1><strong>BOOKSTORE</strong></h1>
           </div>
           <div class="col-md-5">
-            <div class="search-group clearfix">
-              <mat-form-field class="float-left" appearance="legacy">
-                <input matInput type="text" placeholder="What are you looking for?" [(ngModel)]="textToSearch">
-                <button mat-button *ngIf="textToSearch" matSuffix mat-icon-button aria-label="Clear" (click)="textToSearch=''">
-                  <mat-icon>close</mat-icon>
+            <div class="row clearfix">
+              <div class="col-md-9">
+                <mat-form-field class="float-left" appearance="legacy">
+                  <input matInput type="text" placeholder="What are you looking for?" [(ngModel)]="textToSearch">
+                  <button mat-button *ngIf="textToSearch" matSuffix mat-icon-button aria-label="Clear"
+                    (click)="textToSearch=''">
+                    <mat-icon>close</mat-icon>
+                  </button>
+                </mat-form-field>
+              </div>
+              <div class="col-md-3">
+                <button class="float-right" mat-fab color="primary" (click)="search(textToSearch)">
+                  <mat-icon>search</mat-icon>
                 </button>
-              </mat-form-field>
-              <button class="float-right" mat-fab color="primary">
-                <mat-icon>search</mat-icon>
-              </button>
+              </div>
             </div>
+
           </div>
           <div class="col-md-4 storebar-tools">
             <div class="tool-item">
               <button mat-button (click)="drawer.toggle()">
-                <mat-icon>favorite_border</mat-icon>
-                <span>Wish List</span>
+                <mat-icon>shopping_cart</mat-icon>
+                <span>Cart</span>
               </button>
             </div>
             <div class="tool-item">
               <button mat-button (click)="drawer.toggle()">
-                <mat-icon>shopping_cart</mat-icon>
-                <span>Shopping Card</span>
+                <mat-icon>favorite_border</mat-icon>
+                <span>Wish List</span>
               </button>
             </div>
             <div *ngIf="!authSvc.currentUserValue" class="tool-item">
@@ -46,13 +50,13 @@
               </button>
             </div>
             <div *ngIf="authSvc.currentUserValue" class="tool-item">
-                <button (click)="logout()" mat-button>
-                  <mat-icon>input</mat-icon>
-                  <span>
-                    LOG OUT
-                  </span>
-                </button>
-              </div>
+              <button (click)="logout()" mat-button>
+                <mat-icon>input</mat-icon>
+                <span>
+                  LOG OUT
+                </span>
+              </button>
+            </div>
           </div>
         </div>
       </div>

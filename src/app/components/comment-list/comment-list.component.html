@@ -14,7 +14,7 @@
       <div class="clearfix">
         <div class="float-left">
           <span>{{comment?.userName}}</span> <br>
-          <span>Date : {{comment?.publicationDate}}</span>
+          <span>Date : {{comment?.publicationDate | date:'dd.MM.yyyy HH:mm'}}</span>
         </div>
         <div *ngIf="userCanDelete(comment.userId)" class="float-right">
           <button (click)="delete(comment.id)"mat-stroked-button matTooltip="Delete comment" color="primary">

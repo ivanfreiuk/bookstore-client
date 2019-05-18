@@ -8,7 +8,7 @@ import { BookService } from 'src/app/services/book.service';
   styleUrls: ['./book-list.component.css']
 })
 export class BookListComponent implements OnInit {
-  @Input() listBooks: Book[]
+  @Input() listBooks: Book[];
   constructor(private bookSvc: BookService) {
     // this.bookSvc.getAll().subscribe(data => {
     //   this.listBooks = data;

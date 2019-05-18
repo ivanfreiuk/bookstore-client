@@ -50,7 +50,7 @@ export class MatRegisterComponent implements OnInit {
       lastName : this.controls.lastNameControl.value,
       email : this.controls.emailControl.value,
       password : this.controls.passwordControl.value,
-      role: ''
+      roleName: ''
     };
     this.userService.register(user)
       .pipe(first())
