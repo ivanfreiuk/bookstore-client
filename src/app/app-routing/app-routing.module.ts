@@ -12,6 +12,7 @@ import { AdminBookListComponent } from '../components/admin/admin-book-list/admi
 import { EditBookComponent } from '../components/admin/edit-book/edit-book.component';
 import { BookResolver } from '../resolvers/book.resolver';
 import { BookListComponent } from '../components/books-main-page/book-list/book-list.component';
+import { UserListComponent } from '../components/admin/user-list/user-list.component';
 
 const routes: Routes = [
   {
@@ -49,6 +50,13 @@ const routes: Routes = [
   {
     path: 'register',
     component: MatRegisterComponent
+  },
+  {
+    path: 'users',
+    component: UserListComponent,
+    canActivate: [AuthGuard],
+    data: {
+      roles:["User", "Manager"]}
   },
   {
     path: 'admin',

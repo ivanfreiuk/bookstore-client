@@ -5,15 +5,18 @@
         <div class="nav-item">
           <a mat-button routerLink="/home">Home</a>
         </div>
+        <div *ngIf="authSvc.currentUserValue?.roleName==='Admin'" class="nav-item">
+          <a mat-button routerLink="/users">User list</a>
+        </div>
         <div class="nav-item">
           <a mat-button routerLink="/books">Books</a>
         </div>
         <div *ngIf="authSvc.currentUserValue?.roleName==='User'" class="nav-item">
-          <button mat-button>Contact us</button>
-        </div>        
+          <a mat-button>Contact us</a>
+        </div>
         <div *ngIf="authSvc.currentUserValue?.roleName!=='User'" class="nav-item">
-            <button mat-button routerLink="/add-book">Add book</button>
-          </div>
+          <a mat-button routerLink="/add-book">Add book</a>
+        </div>
         <div class="nav-item">
           <button mat-button>About us</button>
         </div>

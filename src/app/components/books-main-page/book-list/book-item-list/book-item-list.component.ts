@@ -23,7 +23,7 @@ export class BookItemListComponent implements OnInit {
   }
 
   addToCart(bookId: number) {
-    this.cartSvc.getAll().subscribe(data => {
+    this.cartSvc.getItemsByUserId(this.authSvc.currentUserValue.id).subscribe(data => {
       let cartItems: CartItem[] = data;
       let cartItem: CartItem = cartItems.filter(i => i.bookId === bookId)[0];
       if (cartItem) {

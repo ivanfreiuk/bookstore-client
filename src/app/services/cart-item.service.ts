@@ -11,6 +11,7 @@ export class CartItemService {
   private apiUrl = `${environment.apiUrl}/api`;
 
   cartItemsValue: CartItem[];
+  totalSum: number;
 
   constructor(private http: HttpClient) { }
 

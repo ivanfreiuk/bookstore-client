@@ -1,32 +1,43 @@
 <div class="bootstrap-wrapper">
   <div *ngFor="let item of cartSvc.cartItemsValue">
+    <mat-divider></mat-divider>
     <div class="cart-item-content">
-      <div class="clearfix">
-        <div class="float-left">
+      <div class="row">
+        <div class="col-md-4">
           <img [src]="item.book.imageUrl" [alt]="item.book.title">
         </div>
-        <div class="float-left">
-            <p>Title : {{item.book.title}}</p>
-            <p>Price : {{item.price}}</p>
-          </div>
-        <div class="float-right">
-          <div class="row">
-            <app-counter [value]="item.quantity"></app-counter>
-          </div>
+        <div class="col-md-8">
+          <h3>{{item.book.title}}</h3>
+          <p>{{item.book.description}}</p>
         </div>
       </div>
-      <div class="clearfix">
-        <div class="float-right">
-          <button mat-raised-button color="warn">
-            <mat-icon>delete</mat-icon>
-          </button>
-        </div>
-      </div>
-
     </div>
-    <mat-divider></mat-divider>
+    <div class="row action-items">
+      <div class="col-md-4">
+        <app-counter [currentValue]="item.quantity" (counterValue)="onValueChange($event, item)"></app-counter>
+      </div>
+      <div class="col-md-5">
+        <h4>${{item.book.price}} excl tax</h4>
+      </div>
+      <div class="col-md-3">
+        <button mat-raised-button color="warn" (click)="deleteItem(item.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </div>
   </div>
 </div>
 <mat-toolbar color="primary" style="position: fixed; bottom: 0;">
-  <button mat-stroked-button>View cart</button>
+  <div class="bootstrap-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+            <button mat-stroked-button>Buy now</button>
+        </div>
+        <div class="col-md-4">
+          <span><span>Total sum :</span> <strong> ${{totalSum}} excl tax</strong></span>
+        </div>
+      </div>
+    </div>
+  </div>
 </mat-toolbar>

@@ -10,6 +10,7 @@ export class Book {
     language: string;
     description: string;
     pageSize: number;
+    commentsEnabled: boolean;
     authors: Author[];
     categories: Category[];
 }

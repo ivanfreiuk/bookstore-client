@@ -18,7 +18,8 @@ export class AdminBookListComponent implements OnInit, OnChanges {
     'language',
     'mark',
     'deleteOption',
-    'detailOption'];
+    'detailOption',
+  'commentingOption'];
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   dataSource: MatTableDataSource<Book>;
@@ -53,6 +54,12 @@ export class AdminBookListComponent implements OnInit, OnChanges {
 
   openDetail(id: number) {
     this.router.navigate([`/detail/${id}`]);
+  }
+
+  toggleCommenting(value: boolean, book: Book) {
+    book.commentsEnabled = value;
+    console.log(book.commentsEnabled);
+     this.bookSvc.update(book).subscribe();
   }
 }
 

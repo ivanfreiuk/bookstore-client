@@ -63,6 +63,7 @@ import { EditBookComponent } from './admin/edit-book/edit-book.component';
 import { SidebarComponent } from './main-content/sidebar/sidebar.component';
 import { WishListTabComponent } from './main-content/sidebar/wish-list-tab/wish-list-tab.component';
 import { CartItemTabComponent } from './main-content/sidebar/cart-item-tab/cart-item-tab.component';
+import { UserListComponent } from './admin/user-list/user-list.component';
 
 @NgModule({
     declarations: [
@@ -90,7 +91,8 @@ import { CartItemTabComponent } from './main-content/sidebar/cart-item-tab/cart-
         EditBookComponent,
         SidebarComponent,
         WishListTabComponent,
-        CartItemTabComponent
+        CartItemTabComponent,
+        UserListComponent
     ],
     imports: [
         AppRoutingModule,

@@ -17,6 +17,7 @@ export class BookDetailComponent implements OnInit {
   bookId: number;
   bookComments: Comment[];
   cartItem: CartItem;
+  quantity: number = 1;
 
   constructor(private bookSvc: BookService,
     private authSvc: AuthenticationService,
@@ -47,7 +48,7 @@ export class BookDetailComponent implements OnInit {
   }
 
   onQuantityChanged(value: number) {
-    this.cartItem.quantity = value;
+    this.quantity = value;
   }
 
   onCommentsChanged() {
@@ -57,11 +58,11 @@ export class BookDetailComponent implements OnInit {
   }
 
   addToCart(bookId: number) {
-    this.cartSvc.getAll().subscribe(data => {
+    this.cartSvc.getItemsByUserId(this.authSvc.currentUserValue.id).subscribe(data => {
       let cartItems: CartItem[] = data;
       let cartItem: CartItem = cartItems.filter(i => i.bookId === bookId)[0];
       if (cartItem) {
-        cartItem.quantity++;
+        cartItem.quantity+=this.quantity;
         this.cartSvc.update(cartItem).subscribe();
       } else {
         cartItem = this.createCartItem(bookId);
@@ -76,7 +77,7 @@ export class BookDetailComponent implements OnInit {
     cartItem.userId = this.authSvc.currentUserValue.id;
     cartItem.isOrdered = false;
     cartItem.createdDate = new Date(Date.now());
-    cartItem.quantity = 1;
+    cartItem.quantity = this.quantity;
     return cartItem;
   }
 }

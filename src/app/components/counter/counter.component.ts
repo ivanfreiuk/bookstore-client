@@ -10,13 +10,11 @@ export class CounterComponent implements OnInit {
 
   @Input() minValue: number = 1;
   @Input() maxValue: number = 100;
-  @Input()value: number = 1;
-  currentValue: number;
+  @Input() currentValue: number = 1;
   @Output() counterValue = new EventEmitter<number>();
   counterControl: FormControl;
 
   constructor() {
-    this.currentValue = this.value;
     this.counterControl = new FormControl(this.currentValue,
       [Validators.min(this.minValue - 1),
       Validators.max(this.maxValue + 1)])

@@ -4,7 +4,7 @@
       <mat-icon>remove</mat-icon>
     </button>
     <mat-form-field>
-      <input matInput [value]="currentValue" [(ngModel)]="currentValue">
+      <input disabled matInput [(value)]="currentValue">
     </mat-form-field>
     <button (click)="increase()" mat-icon-button>
       <mat-icon>add</mat-icon>

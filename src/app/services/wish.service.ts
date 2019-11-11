@@ -9,6 +9,8 @@ import { Observable } from 'rxjs';
 })
 export class WishService {
   private apiUrl = `${environment.apiUrl}/api`;
+  
+  wishListValue: Wish[];
 
   constructor(private http: HttpClient) { }
 
